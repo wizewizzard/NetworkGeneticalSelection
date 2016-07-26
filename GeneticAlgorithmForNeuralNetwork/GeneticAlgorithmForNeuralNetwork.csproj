@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{00232DEC-7F3F-44B2-96F9-507BAB466744}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GeneticAlgorithmForNeuralNetwork</RootNamespace>
+    <AssemblyName>GeneticAlgorithmForNeuralNetwork</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="DP\DataPreprocessor.cs" />
+    <Compile Include="DP\ResultAnalysis.cs" />
+    <Compile Include="EXC\FileLoadException.cs" />
+    <Compile Include="GA\GeneticSelection.cs" />
+    <Compile Include="GA\NetworkExtention.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="Interface\ForecastingWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\ForecastingWindow.Designer.cs">
+      <DependentUpon>ForecastingWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\GraphicPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Interface\GraphicsPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Interface\GAStatusWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\GAStatusWindow.Designer.cs">
+      <DependentUpon>GAStatusWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\MyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\ParameterPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Interface\ParametersPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interface\ParametersPanel.Designer.cs">
+      <DependentUpon>ParametersPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\StatusMonitorThread.cs" />
+    <Compile Include="NN\HiddenLayer.cs" />
+    <Compile Include="NN\INNInstance.cs" />
+    <Compile Include="NN\InputLayer.cs" />
+    <Compile Include="NN\Layer.cs" />
+    <Compile Include="NN\NeuralNetwork.cs" />
+    <Compile Include="NN\OutputLayer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Interface\WindowFunctions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Interface\ForecastingWindow.resx">
+      <DependentUpon>ForecastingWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\GAStatusWindow.resx">
+      <DependentUpon>GAStatusWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interface\ParametersPanel.resx">
+      <DependentUpon>ParametersPanel.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
